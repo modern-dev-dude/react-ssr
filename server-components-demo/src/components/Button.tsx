@@ -1,7 +1,29 @@
-import { useState } from 'react';
+//Current state
 
-export const Button = () => {
-  const [count, setCount] = useState(0);
+const EarlyReturn = () =>{
+  const shouldRender= true 
+  /**
+   * Some BL
+   */
+  if(!shouldRender) return <></>
 
-  return <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>;
-};
+  return (
+    <div>Some components</div>
+  )
+}
+
+// possible alternatives
+const ConditionalRenderInComponent = () =>{
+  const shouldRender= true 
+  /**
+   * Some BL
+   */
+
+  return shouldRender && (
+    <div>Some components</div>
+  )
+}
+
+const ComponentOne = () => (
+    <div>Some components</div>
+)
